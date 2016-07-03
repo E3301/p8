@@ -41,6 +41,34 @@ public class Doig {
     }
     
     private void Two (int[] x){
+        long y[] = new long[1002];
+        long giallo[] = new long[1002];
+        for(long g : y){
+            g = 0;
+        }
+        for(int i=0; i<x.length-12; i++){
+           giallo[i] = x[i]*x[i+1]*x[i+2]*x[i+3]*x[i+4]*x[i+5]*x[i+6]*x[i+7]*x[i+8]*x[i+9]*x[i+10]*x[i+11]*x[i+12];
+            y[i] = x[i]+x[i+1]+x[i+2]+x[i+3]+x[i+4]+x[i+5]+x[i+6]+x[i+7]+x[i+8]+x[i+9]+x[i+10]+x[i+11]+x[i+12];
+            if( y[i]==84 && giallo[i]!=0 ){
+                System.out.println(" \n i===============" + i);
+                System.out.println("" + x[i] + "" + x[i+1] + "" +x[i+2]+ "" + x[i+3]+ ""+x[i+4]+""+x[i+5]+""+x[i+6]+""+x[i+7]+""+x[i+8]+""+x[i+9]+""+x[i+10]+""+x[i+11]+""+x[i+12]);
+                System.out.println(giallo[i] + " and:" + y[i]);
+            }
         
+        }
+        for(long a : y){
+            System.out.println("[ " + a + " ], ");
+        }
+        
+        long j = 3*6*9*7*8*1*7*9*7*7*8*4*6*9*0;
+        System.out.print("\n \n" + j);
+        
+        long bigger = 0;
+        for(int b52=0; b52<y.length; b52++){
+            if(y[b52]>bigger && giallo[b52]!=0){
+                bigger = y[b52];
+            }
+        }
+        System.out.print("\n \n bigger: " + bigger);
     }
 }
